@@ -1,12 +1,10 @@
 package de.telran.form.entity;
 
-import lombok.Builder;
 import lombok.Data;
 
 import javax.persistence.*;
 import java.util.Date;
 
-@Builder
 @Data
 @Entity
 public class PostEntity {
@@ -18,4 +16,8 @@ public class PostEntity {
     private Date date;
     @ManyToOne(targetEntity = AuthorEntity.class)
     private AuthorEntity authorEntity;
+    public PostEntity(){}
+
+    public PostEntity(String title, String body, Date date, AuthorEntity one) {
+    }
 }

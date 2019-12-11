@@ -1,9 +1,13 @@
 package de.telran.form.controller;
 
 import de.telran.form.dto.PostDto;
+import de.telran.form.entity.PostEntity;
 import de.telran.form.service.PostService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/post")
@@ -20,5 +24,10 @@ public class PostController {
     public Long createNewPost(@RequestBody PostDto postDto) {
         log.info("Request received. posdtDto={}", postDto);
         return postService.createPost(postDto);
+    }
+
+    @GetMapping
+    public List<PostDto> getAllPosts(){
+        return postService.getAllPosts();
     }
 }
