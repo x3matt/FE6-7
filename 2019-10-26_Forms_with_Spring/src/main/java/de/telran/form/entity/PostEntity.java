@@ -12,6 +12,7 @@ public class PostEntity {
     @GeneratedValue
     private Long id;
     private String title;
+    @Column(length = 10000)
     private String body;
     private Date date;
     @ManyToOne(targetEntity = AuthorEntity.class)
