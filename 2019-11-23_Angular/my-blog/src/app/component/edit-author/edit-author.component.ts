@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormGroup} from '@angular/forms';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {AuthorService} from '../../service/author/author.service';
+import validate = WebAssembly.validate;
 
 @Component({
   selector: 'app-edit-author',
@@ -17,7 +18,7 @@ export class EditAuthorComponent implements OnInit {
   ngOnInit() {
     this.authorForm = this.fb.group({
         id: [],
-        firstName: [''],
+        firstName: ['', [Validators.required, Validators.minLength(3)]],
         lastName: ['']
       }
     );
