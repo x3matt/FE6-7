@@ -1,0 +1,12 @@
+<div *ngIf="!control.valid && (control.dirty || control.touched)"
+     class="alert alert-danger">
+  <div *ngFor="let error of errors()">
+    {{translations[error.name]}}
+<!--  <div *ngIf="control.errors['required']">-->
+<!--    {{translations.required}}-->
+<!--  </div>-->
+<!--  <div *ngIf="control.errors['minlength']">-->
+<!--    {{translations.minLength}} {{control.errors['minlength']['requiredLength']}}-->
+<!--  </div>-->
+</div>
+</div>

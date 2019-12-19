@@ -31,4 +31,11 @@ export class EditAuthorComponent implements OnInit {
         result => console.log(result)
       );
   }
+
+  errorTranslations(): any {
+    return {
+      required: 'This field is required',
+      minLength: 'Min length for this field is '
+    };
+  }
 }
